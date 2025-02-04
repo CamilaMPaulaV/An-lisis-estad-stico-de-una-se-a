@@ -1,12 +1,15 @@
 # Statistical analysis of a signal
 ## Introdución
-El siguiente código contiene todo lo requerido para graficar una señal ECG, sacar sus datos estadísticos tanto de manera manual como automática, además de realizar su histograma y función de probabilidad correspondiente. Así mismo, se contamina la señal con tres tipos de ruidos específicos para sacar su SNR 
+El siguiente código contiene todo lo requerido para graficar una señal ECG, sacar sus datos estadísticos tanto de manera manual como automática, además de realizar su histograma y función de probabilidad correspondiente. Así mismo, se contamina la señal con tres tipos de ruidos específicos para sacar su SNR tanto para un valor de frecuencia baja como para un valor de frecuencia alta.
 
 ## RESULTADOS
-Primero se descargó la derivación (¿?) de una señal ECG mediante la biblioteca de Pshyonet en archivo .mat, la anterior será la señal base. Una vez realizado lo anterior se obtuvo la siguiente gráfica
+Primero se descargó la derivación DI la cual registra la diferencia de potencial entre brazo derecho y brazo izquierdo de una señal ECG. La descarga se realizó mediante la biblioteca de Pshyonet en archivo .mat, 'obteniendo así la que será' la anterior será la señal base. Una vez realizado lo anterior se obtuvo la siguiente gráfica
 AQUÍ LA GRÁFICA
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0f9d9e53-52d2-4e14-b154-2297028645f3">
+</div>
 
-Posteriormente se realizó su media, desviación estandandar y coeficiente de variación para los cuales se obtuvo lo siguiente:
+Posteriormente 'se realizaron los cálculos pertinentes para hallar' se realizó su media, desviación estandandar y coeficiente de variación para los cuales se obtuvo lo siguiente:
 
 Media automática: 0.009123999999999998  
 Media manual: 0.009124
@@ -19,13 +22,34 @@ Coeficiente de variación manual: 1426.35947754
 
 Una vez obtenidos los datos anteriores se realizó su histograma y su función de probabilidad de manera manual y automática obteniendo lo siguiente:
 AQUÍ LAS DOS GRÁFICAS 
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230501155143/Git-Tutorial.webp" alt="Imagen de muestra" width="400" height="300">
+![image](https://github.com/user-attachments/assets/9ce5a630-f869-4ef7-b987-78535543d741)
 
-Añadiendo se contaminó la señal original con ruido para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR). Para lo siguiente es necesario tener
-en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido
+![image](https://github.com/user-attachments/assets/85d60e24-7fbd-45c5-b190-babd4f3dce73)
+
+![image](https://github.com/user-attachments/assets/11be7eb3-af39-4c89-a9a1-c128f336f34c)
+
+![image](https://github.com/user-attachments/assets/98aa6348-0345-4532-817d-d54a0a3dfc8d)
+
+
+
+
+
+Añadiendo 'Además' se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR). Para lo siguiente es necesario tener en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido
 presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR indica una señal más clara, ya que la potencia de la señal es considerablemente mayor que la del ruido, lo
 que mejora su calidad. De esta manera se obtuvo:
 AQUÍ LAS GRÁFICAS
 
+![image](https://github.com/user-attachments/assets/69076767-cf98-405a-8410-11c56699fbff)
+
+![image](https://github.com/user-attachments/assets/0dcef185-9ba9-4f38-8a90-ba7e19f05b68)
+
+SNR Gaussiano Baja Frecuencia: 3.00 dB
+SNR Gaussiano Alta Frecuencia: -10.65 dB
+SNR Impulso Baja Frecuencia: -18.66 dB
+SNR Impulso Alta Frecuencia: -24.68 dB
+SNR Artefacto Baja Frecuencia: -0.79 dB
+SNR Artefacto Alta Frecuencia: -0.84 dB
 SNR con Ruido Gaussiano: -0.23 dB
 SNR con Ruido Impulso: -18.66 dB
 SNR con Ruido Artefacto: -0.84 dB
