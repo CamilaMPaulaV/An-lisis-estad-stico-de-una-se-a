@@ -9,7 +9,7 @@ Primero se descargó la derivación DI la cual registra la diferencia de potenci
   <img src="https://github.com/user-attachments/assets/0f9d9e53-52d2-4e14-b154-2297028645f3">
 </div>
 
-Posteriormente 'se realizaron los cálculos pertinentes para hallar' se realizó su media, desviación estandandar y coeficiente de variación para los cuales se obtuvo lo siguiente:
+Posteriormente se realizaron los cálculos pertinentes para hallar su media, desviación estandandar y coeficiente de variación, los valores obtenidos son los siguiente:
 
 Media automática: 0.009123999999999998  
 Media manual: 0.009124
@@ -21,7 +21,7 @@ Coeficiente de variación auomático: no tiene función predeterminada
 Coeficiente de variación manual: 1426.35947754
 
 Una vez obtenidos los datos anteriores se realizó su histograma y su función de probabilidad de manera manual y automática obteniendo lo siguiente:
-AQUÍ LAS DOS GRÁFICAS 
+
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230501155143/Git-Tutorial.webp" alt="Imagen de muestra" width="400" height="300">
 ![image](https://github.com/user-attachments/assets/9ce5a630-f869-4ef7-b987-78535543d741)
 
@@ -33,26 +33,20 @@ AQUÍ LAS DOS GRÁFICAS
 
 
 
-
-
-Añadiendo 'Además' se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR). Para lo siguiente es necesario tener en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido
-presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR indica una señal más clara, ya que la potencia de la señal es considerablemente mayor que la del ruido, lo
-que mejora su calidad. De esta manera se obtuvo:
-AQUÍ LAS GRÁFICAS
+Además se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR). Para lo siguiente es necesario tener en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR indica una señal más clara, ya que la potencia de la señal es considerablemente mayor que la del ruido, lo que mejora su calidad. De esta manera se obtuvo:
 
 ![image](https://github.com/user-attachments/assets/69076767-cf98-405a-8410-11c56699fbff)
 
 ![image](https://github.com/user-attachments/assets/0dcef185-9ba9-4f38-8a90-ba7e19f05b68)
 
 SNR Gaussiano Baja Frecuencia: 3.00 dB
-SNR Gaussiano Alta Frecuencia: -10.65 dB
+SNR Gaussiano Alta Frecuencia: -10.65 dB  
+
 SNR Impulso Baja Frecuencia: -18.66 dB
-SNR Impulso Alta Frecuencia: -24.68 dB
+SNR Impulso Alta Frecuencia: -24.68 dB  
+
 SNR Artefacto Baja Frecuencia: -0.79 dB
-SNR Artefacto Alta Frecuencia: -0.84 dB
-SNR con Ruido Gaussiano: -0.23 dB
-SNR con Ruido Impulso: -18.66 dB
-SNR con Ruido Artefacto: -0.84 dB
+SNR Artefacto Alta Frecuencia: -0.84 dB   
 
 ## Instrucciones
 1. Para cargar la señal debe colocar su ruta del computador donde se encuentra el archivo con el ECG, se reduce la frecuencia para poder ver de forma más específica la señal (se divide en 200, usted puede escoger el valor acorde a sus necesidades), posteriormente se cuentan los datos. Se definene la frecuencia de muestreo y su periodo  y se guardan los datos en un array. Para graficar la señal se usa matplot
