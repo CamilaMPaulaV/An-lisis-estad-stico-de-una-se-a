@@ -219,7 +219,7 @@ ruido_artefacto_alta = np.random.normal(0, 0.2, ecg.shape) * np.sin(2 * np.pi * 
 ecg_artefacto_alta = ecg + ruido_artefacto_alta
 snr_artefacto_alta = calcular_snr(ecg, ruido_artefacto_alta)
 ```
-5. Hola
+5. A continuación se grafican las señales mediante matplotlib de los tres ruidos con sus respectivas frecuencias.
 ```python
    
 # Señales contaminadas con ruidos de BAJA FRECUENCIA
