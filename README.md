@@ -47,7 +47,7 @@ SNR Artefacto Alta Frecuencia: -0.60 dB
 
 ## Requerimientos 
 1. Python 3.12
-2. Librerias Numpy, matplotlib, scipy.io y seaborn
+2. Librerias Numpy, matplotlib, scipy.io, seaborn y scipy.signal
 3. Señal biomédica en formato .mat
 
 ## Instrucciones
