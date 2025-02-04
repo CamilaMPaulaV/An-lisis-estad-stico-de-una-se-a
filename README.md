@@ -153,54 +153,122 @@ plt.show()
 ```python
 #SNR
 def calcular_snr(señal, ruido):
-    potencia_señal = np.mean(señal**2)
-    potencia_ruido = np.mean(ruido**2)
+
+    potencia_señal = np.mean(señal ** 2)
+    potencia_ruido = np.mean(ruido ** 2)
     snr = 10 * np.log10(potencia_señal / potencia_ruido)
     return snr
 
-# Ruido Gaussiano
-ruido_gaussiano = np.random.normal(media, desviacion_estandar) 
-ecg_gaussiano = ecg + ruido_gaussiano
-snr_gaussiano = calcular_snr(ecg, ruido_gaussiano)
+def butter_lowpass_filter(data, frcor, fs, order=4):
+    nyq = 0.5 * fs
+    normal_frcor = frcor / nyq
+    b, a = butter(order, normal_frcor, btype='low', analog=False)
+    y = filtfilt(b, a, data)
+    return y
 
-#Ruido Impulso
-ruido_impulso = np.zeros_like(ecg)
-indices_impulso = np.random.choice(np.arange(len(ecg)), size=int(len(ecg) * 0.05), replace=False)
-ruido_impulso[indices_impulso] = np.random.choice([-5, 5], size=indices_impulso.shape)  #Picos de ±5
-ecg_impulso = ecg + ruido_impulso
-snr_impulso = calcular_snr(ecg, ruido_impulso)
+def butter_highpass_filter(data, frcor, fs, order=4):
+    nyq = 0.5 * fs
+    normal_frcor = frcor / nyq
+    b, a = butter(order, normal_frcor, btype='high', analog=False)
+    y = filtfilt(b, a, data)
+    return y
 
-#Ruido Artefacto 
-ruido_artefacto = np.random.normal(0, 0.2, ecg.shape) * np.sin(2 * np.pi * 1 * t)  #Por una señal senoidal
-ecg_artefacto = ecg + ruido_artefacto
-snr_artefacto = calcular_snr(ecg, ruido_artefacto)
+#RUIDO GAUSSIANO
+# Generar ruido blanco gaussiano
+ruido_gaussiano = np.random.normal(0, 0.5, ecg.shape)
 
-#Graficar las señales contaminadas
-plt.figure(figsize=(12, 8))
+# Baja frecuencia: filtrar el ruido para obtener componentes por debajo de 10 Hz
+ruido_gaussiano_baja = butter_lowpass_filter(ruido_gaussiano, frcor=10, fs=fs)
 
+# Alta frecuencia: filtrar el ruido para obtener componentes por encima de 50 Hz
+ruido_gaussiano_alta = butter_highpass_filter(ruido_gaussiano, frcor=50, fs=fs)
+
+ecg_gaussiano_baja = ecg + ruido_gaussiano_baja
+ecg_gaussiano_alta = ecg + ruido_gaussiano_alta
+
+snr_gaussiano_baja = calcular_snr(ecg, ruido_gaussiano_baja)
+snr_gaussiano_alta = calcular_snr(ecg, ruido_gaussiano_alta)
+
+# RUIDO IMPULSO
+# Baja frecuencia: menor cantidad de impulsos (5% de las muestras)
+indices_impulso_baja = np.random.choice(np.arange(n), size=int(n * 0.05), replace=False)
+ruido_impulso_baja = np.zeros_like(ecg)
+ruido_impulso_baja[indices_impulso_baja] = np.random.choice([-5, 5], size=indices_impulso_baja.shape)
+
+# Alta frecuencia: mayor cantidad de impulsos (20% de las muestras)
+indices_impulso_alta = np.random.choice(np.arange(n), size=int(n * 0.20), replace=False)
+ruido_impulso_alta = np.zeros_like(ecg)
+ruido_impulso_alta[indices_impulso_alta] = np.random.choice([-5, 5], size=indices_impulso_alta.shape)
+
+ecg_impulso_baja = ecg + ruido_impulso_baja
+ecg_impulso_alta = ecg + ruido_impulso_alta
+
+snr_impulso_baja = calcular_snr(ecg, ruido_impulso_baja)
+snr_impulso_alta = calcular_snr(ecg, ruido_impulso_alta)
+
+# RUIDO ARTEFACTO
+# Baja frecuencia: se modula el ruido con una sinusoide de 1 Hz
+ruido_artefacto_baja = np.random.normal(0, 0.2, ecg.shape) * np.sin(2 * np.pi * 1 * t)
+ecg_artefacto_baja = ecg + ruido_artefacto_baja
+snr_artefacto_baja = calcular_snr(ecg, ruido_artefacto_baja)
+
+# Alta frecuencia: se modula el ruido con una sinusoide de 50 Hz
+ruido_artefacto_alta = np.random.normal(0, 0.2, ecg.shape) * np.sin(2 * np.pi * 50 * t)
+ecg_artefacto_alta = ecg + ruido_artefacto_alta
+snr_artefacto_alta = calcular_snr(ecg, ruido_artefacto_alta)
+```
+5. Hola
+```python
+   
+# Señales contaminadas con ruidos de BAJA FRECUENCIA
+plt.figure(figsize=(12, 10))
 plt.subplot(3, 1, 1)
-plt.plot(t, ecg_gaussiano)
-plt.title(f'Señal ECG con Ruido Gaussiano (SNR = {snr_gaussiano:.2f} dB)')
+plt.plot(t, ecg_gaussiano_baja)
+plt.title(f'ECG con Ruido Gaussiano Baja Frecuencia (SNR = {snr_gaussiano_baja:.2f} dB)')
 plt.xlabel('Tiempo (s)')
 plt.ylabel('Amplitud (mV)')
 
 plt.subplot(3, 1, 2)
-plt.plot(t, ecg_impulso)
-plt.title(f'Señal ECG con Ruido Impulso (SNR = {snr_impulso:.2f} dB)')
+plt.plot(t, ecg_impulso_baja)
+plt.title(f'ECG con Ruido Impulso Baja Frecuencia (SNR = {snr_impulso_baja:.2f} dB)')
 plt.xlabel('Tiempo (s)')
 plt.ylabel('Amplitud (mV)')
 
 plt.subplot(3, 1, 3)
-plt.plot(t, ecg_artefacto)
-plt.title(f'Señal ECG con Ruido Artefacto (SNR = {snr_artefacto:.2f} dB)')
+plt.plot(t, ecg_artefacto_baja)
+plt.title(f'ECG con Ruido Artefacto Baja Frecuencia (SNR = {snr_artefacto_baja:.2f} dB)')
 plt.xlabel('Tiempo (s)')
 plt.ylabel('Amplitud (mV)')
-
 plt.tight_layout()
 plt.show()
 
-print(f"\nSNR con Ruido Gaussiano: {snr_gaussiano:.2f} dB")
-print(f"SNR con Ruido Impulso: {snr_impulso:.2f} dB")
-print(f"SNR con Ruido Artefacto: {snr_artefacto:.2f} dB")
+# Señales contaminadas con ruidos de ALTA FRECUENCIA
+plt.figure(figsize=(12, 10))
+plt.subplot(3, 1, 1)
+plt.plot(t, ecg_gaussiano_alta)
+plt.title(f'ECG con Ruido Gaussiano Alta Frecuencia (SNR = {snr_gaussiano_alta:.2f} dB)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+
+plt.subplot(3, 1, 2)
+plt.plot(t, ecg_impulso_alta)
+plt.title(f'ECG con Ruido Impulso Alta Frecuencia (SNR = {snr_impulso_alta:.2f} dB)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+
+plt.subplot(3, 1, 3)
+plt.plot(t, ecg_artefacto_alta)
+plt.title(f'ECG con Ruido Artefacto Alta Frecuencia (SNR = {snr_artefacto_alta:.2f} dB)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+plt.tight_layout()
+plt.show()
+
+print(f"\nSNR Gaussiano Baja Frecuencia: {snr_gaussiano_baja:.2f} dB")
+print(f"SNR Gaussiano Alta Frecuencia: {snr_gaussiano_alta:.2f} dB")
+print(f"SNR Impulso Baja Frecuencia: {snr_impulso_baja:.2f} dB")
+print(f"SNR Impulso Alta Frecuencia: {snr_impulso_alta:.2f} dB")
+print(f"SNR Artefacto Baja Frecuencia: {snr_artefacto_baja:.2f} dB")
+print(f"SNR Artefacto Alta Frecuencia: {snr_artefacto_alta:.2f} dB") 
 ```
    
