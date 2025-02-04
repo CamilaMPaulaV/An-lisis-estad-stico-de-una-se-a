@@ -1,8 +1,8 @@
 # Statistical analysis of a signal
-## Introdución
+## Introducción
 El siguiente código contiene todo lo requerido para graficar una señal ECG, sacar sus datos estadísticos tanto de manera manual como automática, además de realizar su histograma y función de probabilidad correspondiente. Así mismo, se contamina la señal con tres tipos de ruido específicos para sacar su SNR tanto para un valor de frecuencia baja como para un valor de frecuencia alta.
 
-## RESULTADOS
+## Resultados
 Primero se descargó la derivación DI la cual registra la diferencia de potencial entre brazo derecho y brazo izquierdo de una señal ECG. La descarga se realizó mediante la biblioteca de Pshyonet en archivo .mat, obteniendo así la que será la señal base. Una vez realizado lo anterior se obtuvo la siguiente gráfica
 
 <div align="center">
@@ -47,6 +47,11 @@ SNR Impulso Alta Frecuencia: -24.68 dB
 
 SNR Artefacto Baja Frecuencia: -0.79 dB   
 SNR Artefacto Alta Frecuencia: -0.84 dB   
+
+## Requerimientos 
+1. Python 3.12
+2. Librerias Numpy, matplotlib, scipy.io y seaborn
+3. Señal biomédica en formato .mat
 
 ## Instrucciones
 1. Para cargar la señal debe colocar su ruta del computador donde se encuentra el archivo con el ECG, se reduce la frecuencia para poder ver de forma más específica la señal (se divide en 200, usted puede escoger el valor acorde a sus necesidades), posteriormente se cuentan los datos. Se definene la frecuencia de muestreo y su periodo  y se guardan los datos en un array. Para graficar la señal se usa matplot
