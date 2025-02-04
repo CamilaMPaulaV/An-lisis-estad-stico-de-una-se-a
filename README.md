@@ -1,10 +1,10 @@
 # Statistical analysis of a signal
 ## Introdución
-El siguiente código contiene todo lo requerido para graficar una señal ECG, sacar sus datos estadísticos tanto de manera manual como automática, además de realizar su histograma y función de probabilidad correspondiente. Así mismo, se contamina la señal con tres tipos de ruidos específicos para sacar su SNR tanto para un valor de frecuencia baja como para un valor de frecuencia alta.
+El siguiente código contiene todo lo requerido para graficar una señal ECG, sacar sus datos estadísticos tanto de manera manual como automática, además de realizar su histograma y función de probabilidad correspondiente. Así mismo, se contamina la señal con tres tipos de ruido específicos para sacar su SNR tanto para un valor de frecuencia baja como para un valor de frecuencia alta.
 
 ## RESULTADOS
-Primero se descargó la derivación DI la cual registra la diferencia de potencial entre brazo derecho y brazo izquierdo de una señal ECG. La descarga se realizó mediante la biblioteca de Pshyonet en archivo .mat, 'obteniendo así la que será' la anterior será la señal base. Una vez realizado lo anterior se obtuvo la siguiente gráfica
-AQUÍ LA GRÁFICA
+Primero se descargó la derivación DI la cual registra la diferencia de potencial entre brazo derecho y brazo izquierdo de una señal ECG. La descarga se realizó mediante la biblioteca de Pshyonet en archivo .mat, obteniendo así la que será la señal base. Una vez realizado lo anterior se obtuvo la siguiente gráfica
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/0f9d9e53-52d2-4e14-b154-2297028645f3">
 </div>
