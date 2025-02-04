@@ -29,18 +29,21 @@ Una vez obtenidos los datos anteriores se realizó su histograma y su función d
 
 Además se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR). Para lo siguiente es necesario tener en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR indica una señal más clara, ya que la potencia de la señal es considerablemente mayor que la del ruido, lo que mejora su calidad. De esta manera se obtuvo:
 
-![image](https://github.com/user-attachments/assets/69076767-cf98-405a-8410-11c56699fbff)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/67a83712-2f54-420c-bf4b-236f16089d5f" width="600" height="500">
+   <img src="https://github.com/user-attachments/assets/044a2f5e-2969-420d-8f73-17dd21908e71" width="600" height="500">
+</div>
 
-![image](https://github.com/user-attachments/assets/0dcef185-9ba9-4f38-8a90-ba7e19f05b68)
 
-SNR Gaussiano Baja Frecuencia: 3.00 dB   
-SNR Gaussiano Alta Frecuencia: -10.65 dB  
+
+SNR Gaussiano Baja Frecuencia: 2.96 dB   
+SNR Gaussiano Alta Frecuencia: -10.46 dB  
 
 SNR Impulso Baja Frecuencia: -18.66 dB    
 SNR Impulso Alta Frecuencia: -24.68 dB  
 
-SNR Artefacto Baja Frecuencia: -0.79 dB   
-SNR Artefacto Alta Frecuencia: -0.84 dB   
+SNR Artefacto Baja Frecuencia: -0.81 dB   
+SNR Artefacto Alta Frecuencia: -0.60 dB   
 
 ## Requerimientos 
 1. Python 3.12
