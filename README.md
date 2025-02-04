@@ -39,13 +39,13 @@ Además se contaminó la señal original con ruido a altas y bajas frecuencias p
 
 ![image](https://github.com/user-attachments/assets/0dcef185-9ba9-4f38-8a90-ba7e19f05b68)
 
-SNR Gaussiano Baja Frecuencia: 3.00 dB
+SNR Gaussiano Baja Frecuencia: 3.00 dB   
 SNR Gaussiano Alta Frecuencia: -10.65 dB  
 
-SNR Impulso Baja Frecuencia: -18.66 dB
+SNR Impulso Baja Frecuencia: -18.66 dB    
 SNR Impulso Alta Frecuencia: -24.68 dB  
 
-SNR Artefacto Baja Frecuencia: -0.79 dB
+SNR Artefacto Baja Frecuencia: -0.79 dB   
 SNR Artefacto Alta Frecuencia: -0.84 dB   
 
 ## Instrucciones
