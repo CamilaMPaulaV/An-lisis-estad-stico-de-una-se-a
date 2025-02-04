@@ -22,10 +22,10 @@ Coeficiente de variación manual: 1426.35947754
 
 Una vez obtenidos los datos anteriores se realizó su histograma y su función de probabilidad de manera manual y automática obteniendo lo siguiente:
 
-<img src="(https://github.com/user-attachments/assets/9ce5a630-f869-4ef7-b987-78535543d741" width="400" height="300">
-<img src="(https://github.com/user-attachments/assets/85d60e24-7fbd-45c5-b190-babd4f3dce73" width="400" height="300">
-<img src="(https://github.com/user-attachments/assets/11be7eb3-af39-4c89-a9a1-c128f336f34c" width="400" height="300">
-<img src="(https://github.com/user-attachments/assets/98aa6348-0345-4532-817d-d54a0a3dfc8d" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/20fc0366-d59d-47d0-9ae8-cd4406cc55c7" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/85d60e24-7fbd-45c5-b190-babd4f3dce73" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/11be7eb3-af39-4c89-a9a1-c128f336f34c" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/98aa6348-0345-4532-817d-d54a0a3dfc8d" width="400" height="300">
 
 Además se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR). Para lo siguiente es necesario tener en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR indica una señal más clara, ya que la potencia de la señal es considerablemente mayor que la del ruido, lo que mejora su calidad. De esta manera se obtuvo:
 
