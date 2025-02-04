@@ -26,7 +26,7 @@ presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR in
 que mejora su calidad. De esta manera se obtuvo:
 AQUÍ LAS GRÁFICAS
 
-SNR con Ruido Gaussiano: -11.66 dB
+SNR con Ruido Gaussiano: -0.23 dB
 SNR con Ruido Impulso: -18.66 dB
 SNR con Ruido Artefacto: -0.84 dB
 
@@ -128,5 +128,59 @@ plt.xlabel('Amplitud (mV)')
 plt.ylabel('Densidad de probabilidad')
 plt.show()
 ```
-4. A continuación se realiza 
+4. A continuación se realiza la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para sacar el mismo. Posterioemnte se realiza el rudio gaussiano que se realiza entorno a los valores de la media y de la desviacion estandar
+
+```python
+#SNR
+def calcular_snr(señal, ruido):
+    potencia_señal = np.mean(señal**2)
+    potencia_ruido = np.mean(ruido**2)
+    snr = 10 * np.log10(potencia_señal / potencia_ruido)
+    return snr
+
+# Ruido Gaussiano
+ruido_gaussiano = np.random.normal(media, desviacion_estandar) 
+ecg_gaussiano = ecg + ruido_gaussiano
+snr_gaussiano = calcular_snr(ecg, ruido_gaussiano)
+
+#Ruido Impulso
+ruido_impulso = np.zeros_like(ecg)
+indices_impulso = np.random.choice(np.arange(len(ecg)), size=int(len(ecg) * 0.05), replace=False)
+ruido_impulso[indices_impulso] = np.random.choice([-5, 5], size=indices_impulso.shape)  #Picos de ±5
+ecg_impulso = ecg + ruido_impulso
+snr_impulso = calcular_snr(ecg, ruido_impulso)
+
+#Ruido Artefacto 
+ruido_artefacto = np.random.normal(0, 0.2, ecg.shape) * np.sin(2 * np.pi * 1 * t)  #Por una señal senoidal
+ecg_artefacto = ecg + ruido_artefacto
+snr_artefacto = calcular_snr(ecg, ruido_artefacto)
+
+#Graficar las señales contaminadas
+plt.figure(figsize=(12, 8))
+
+plt.subplot(3, 1, 1)
+plt.plot(t, ecg_gaussiano)
+plt.title(f'Señal ECG con Ruido Gaussiano (SNR = {snr_gaussiano:.2f} dB)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+
+plt.subplot(3, 1, 2)
+plt.plot(t, ecg_impulso)
+plt.title(f'Señal ECG con Ruido Impulso (SNR = {snr_impulso:.2f} dB)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+
+plt.subplot(3, 1, 3)
+plt.plot(t, ecg_artefacto)
+plt.title(f'Señal ECG con Ruido Artefacto (SNR = {snr_artefacto:.2f} dB)')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud (mV)')
+
+plt.tight_layout()
+plt.show()
+
+print(f"\nSNR con Ruido Gaussiano: {snr_gaussiano:.2f} dB")
+print(f"SNR con Ruido Impulso: {snr_impulso:.2f} dB")
+print(f"SNR con Ruido Artefacto: {snr_artefacto:.2f} dB")
+```
    
