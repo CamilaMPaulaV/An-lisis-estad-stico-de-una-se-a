@@ -154,7 +154,7 @@ plt.xlabel('Amplitud (mV)')
 plt.ylabel('Densidad de probabilidad')
 plt.show()
 ```
-4. Se da inicio a la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para obtener el dato correspondiente, así mismo se calcula la frecuencia de nyquist y de corte que permiten crear el filtro pasa bajo y pasa alto. Posterioemnte se establecen el rudio gaussiano, el ruido de impulso y el ruido artefacto permitiendo así calcular el SNR con las distintas frecuencias.
+4. Se da inicio a la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para obtener el dato correspondiente, así mismo se calcula la frecuencia de nyquist y de corte que permiten crear el filtro pasa bajo y pasa alto. Posteriormnte se establecen el rudio gaussiano, el ruido de impulso y el ruido artefacto acorde a sus fórmulas permitiendo así calcular el SNR con las distintas frecuencias.
 
 ```python
 #SNR
