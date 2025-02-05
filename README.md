@@ -282,3 +282,7 @@ print(f"SNR Artefacto Alta Frecuencia: {snr_artefacto_alta:.2f} dB")
 Statistical analysis of a signal by Camila Martínez and Paula Vega  
 Published 4/02/25
 
+## Referencias
+1. Ruido y dB | PySDR: A Guide to SDR and DSP using Python. (s. f.). https://pysdr.org/es/content-es/noise.html
+2. Derivaciones Cardiacas, significado. (s. f.). https://www.my-ekg.com/generalidades-ekg/derivaciones-cardiacas.html
+3. PhysioBank ATM. (s. f.). https://archive.physionet.org/cgi-bin/atm/ATM
