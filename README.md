@@ -113,7 +113,7 @@ probabilidad = [f / n for f in frecuencia]
 frecuencia, bin_bor = np.histogram(ecg, bins=60, density=True)
 ```
 
-3. A continuación se realiza la impresión en la consola de los datos sacados anteriormente, puede hacerlo despues de cada función sacada o al final (como en este caso). Se usa la libreria matplotlib y seaborn.
+3. A continuación se realiza la impresión en la consola de los datos sacados anteriormente, puede hacerlo después de cada función sacada o al final (como en este caso). Se usa la libreria matplotlib y seaborn.
    
 ```python
 
@@ -150,7 +150,7 @@ plt.xlabel('Amplitud (mV)')
 plt.ylabel('Densidad de probabilidad')
 plt.show()
 ```
-4. A continuación se realiza la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para sacar el mismo. Posterioemnte se realiza el rudio gaussiano que se realiza entorno a los valores de la media y de la desviacion estandar
+4. Se da inicio a la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para obtener el dato correspondiente, así mismo se calcula la frecuencia de nyquist y de corte que permiten crear el filtro pasa bajo y pasa alto. Posterioemnte se establecen el rudio gaussiano, el ruido de impulso y el ruido artefacto permitiendo así calcular el SNR con las distintas frecuencias.
 
 ```python
 #SNR
@@ -219,7 +219,7 @@ ruido_artefacto_alta = np.random.normal(0, 0.2, ecg.shape) * np.sin(2 * np.pi * 
 ecg_artefacto_alta = ecg + ruido_artefacto_alta
 snr_artefacto_alta = calcular_snr(ecg, ruido_artefacto_alta)
 ```
-5. A continuación se grafican las señales mediante matplotlib de los tres ruidos con sus respectivas frecuencias.
+5. Se permite la visualización de las señales contamionadas mediante matplotlib de los tres ruidos con sus respectivas frecuencias.
 ```python
    
 # Señales contaminadas con ruidos de BAJA FRECUENCIA
