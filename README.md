@@ -279,6 +279,6 @@ print(f"SNR Artefacto Baja Frecuencia: {snr_artefacto_baja:.2f} dB")
 print(f"SNR Artefacto Alta Frecuencia: {snr_artefacto_alta:.2f} dB") 
 ```
 ## Uso
-Statistical analysis of a signal by Camila Martínez and Paula Vega
+Statistical analysis of a signal by Camila Martínez and Paula Vega  
 Published 4/02/25
 
