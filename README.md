@@ -29,7 +29,7 @@ Una vez obtenidos los datos anteriores se realizó su histograma y su función d
 <img src="https://github.com/user-attachments/assets/98aa6348-0345-4532-817d-d54a0a3dfc8d" width="400" height="300">
 </div>
 
-Además se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR), entre estos encontramos, el ruido Gaussiano es un ruido estadistico aleatorio con una distribución de probabilidad normal, el ruido de impulso genera picos repentinos y de alta amplitud que aparecen repentinamente y el ruido artefacto son distorsiones dadas por el sistema, por ejemplo durante el muestreo. 
+Además se contaminó la señal original con ruido a altas y bajas frecuencias para simular efectos que podrían pasar en la vida real y encontrar su realación señal ruido (SNR), entre estos encontramos, el ruido Gaussiano que es un ruido estadistico aleatorio con una distribución de probabilidad normal, el ruido de impulso genera picos repentinos y de alta amplitud que aparecen repentinamente y el ruido artefacto son distorsiones dadas por el sistema, por ejemplo durante el muestreo. 
 
 Para lo siguiente es necesario tener en cuenta que el SNR hace referencia a la diferencia que existe entre el ruido y la potencia de una señal, lo que quiere decir que mide la proporción entre la señal útil y el ruido presente, teniendo en cuenta lo anterior es importante decir que un mayor SNR indica una señal más clara, ya que la potencia de la señal es considerablemente mayor que la del ruido, lo que mejora su calidad.
 
