@@ -182,7 +182,7 @@ def butter_highpass_filter(data, frcor, fs, order=4):
 
 #RUIDO GAUSSIANO
 # Generar ruido blanco gaussiano
-ruido_gaussiano = np.random.normal(media, desviacion_estandar, ecg.shape)
+ruido_gaussiano = np.random.normal(0, 0.5, ecg.shape)
 
 # Baja frecuencia: filtrar el ruido para obtener componentes por debajo de 10 Hz
 ruido_gaussiano_baja = butter_lowpass_filter(ruido_gaussiano, frcor=10, fs=fs)
