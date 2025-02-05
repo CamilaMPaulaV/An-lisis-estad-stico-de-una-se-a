@@ -117,7 +117,7 @@ probabilidad = [f / n for f in frecuencia]
 frecuencia, bin_bor = np.histogram(ecg, bins=60, density=True)
 ```
 
-3. A continuación se realiza la impresión en la consola de los datos sacados anteriormente, puede hacerlo después de cada función sacada o al final (como en este caso). Se usa la libreria matplotlib y seaborn.
+3. A continuación se realiza la impresión en la consola de los datos sacados anteriormente, puede hacerlo después de cada función o al final (como en este caso). Se usa la libreria matplotlib y seaborn.
    
 ```python
 
