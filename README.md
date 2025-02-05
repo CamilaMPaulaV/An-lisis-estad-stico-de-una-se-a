@@ -9,7 +9,7 @@ Primero se descargó la derivación DI la cual registra la diferencia de potenci
   <img src="https://github.com/user-attachments/assets/0f9d9e53-52d2-4e14-b154-2297028645f3" width="400" height="300">
 </div>
 
-Posteriormente se realizaron los cálculos pertinentes para hallar su media, desviación estandandar y coeficiente de variación, los valores obtenidos son los siguiente:
+Posteriormente se realizaron los cálculos pertinentes para hallar su media, desviación estandandar y coeficiente de variación, los valores obtenidos son los siguientes:
 
 Media automática: 0.009123999999999998  
 Media manual: 0.009124
