@@ -23,8 +23,8 @@ Coeficiente de variación manual: 1426.35947754
 Una vez obtenidos los datos anteriores se realizó su histograma y su función de probabilidad de manera manual y automática obteniendo lo siguiente:
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/20fc0366-d59d-47d0-9ae8-cd4406cc55c7" width="400" height="300">
-<img src="https://github.com/user-attachments/assets/85d60e24-7fbd-45c5-b190-babd4f3dce73" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/07d92939-5102-4892-9fec-3db30a51b156" width="400" height="300">
+<img src="https://github.com/user-attachments/assets/7e1eab35-f89b-4408-8340-17e7a54657d9" width="400" height="300">
 <img src="https://github.com/user-attachments/assets/11be7eb3-af39-4c89-a9a1-c128f336f34c" width="400" height="300">
 <img src="https://github.com/user-attachments/assets/98aa6348-0345-4532-817d-d54a0a3dfc8d" width="400" height="300">
 </div>
@@ -133,13 +133,13 @@ print("Coeficiente de variación:", coeficiente_variacion)
 plt.hist(ecg, bins=60, color='pink', edgecolor='black')
 plt.title('Histograma de la señal ECG')
 plt.xlabel('Amplitud (mV)')
-plt.ylabel('Frecuencia (Hz)')
+plt.ylabel('Número de muestras')
 plt.show()
 
 plt.bar(bin_bor[:-1], frecuencia, width=(bin_bor[1] - bin_bor[0]), color='pink', edgecolor='black', align='edge')
 plt.title('Histograma Manual de la Señal ECG')
 plt.xlabel('Amplitud (mV)')
-plt.ylabel('Frecuencia (Hz)')
+plt.ylabel('Número de muestas')
 plt.show()
 
 sns.kdeplot(ecg, color='green')
@@ -149,12 +149,13 @@ plt.ylabel('Densidad de probabilidad')
 plt.show()
 
 sns.kdeplot(ecg, color='green')
-plt.title('Función de Probabilidad manual')
+plt.title('Función de Probabilidad Manual')
 plt.xlabel('Amplitud (mV)')
 plt.ylabel('Densidad de probabilidad')
 plt.show()
+
 ```
-4. Se da inicio a la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para obtener el dato correspondiente, así mismo se calcula la frecuencia de nyquist y de corte que permiten crear el filtro pasa bajo y pasa alto. Posteriormnte se establecen el rudio gaussiano, el ruido de impulso y el ruido artefacto acorde a sus fórmulas permitiendo así calcular el SNR con las distintas frecuencias.
+4. Se da inicio a la parte del SNR, contaminando la señal con tres tipos de ruido. Primero se declara una función retornable llamada calcular_snr en la cual se determina la fórmula que usa para obtener el dato correspondiente, así mismo se calcula la frecuencia de nyquist y de corte que permiten crear el filtro pasa bajo y pasa alto con ayuda de las funciones butter y filtfilt. Posteriormnte se establecen el rudio gaussiano, el ruido de impulso y el ruido artefacto acorde a sus fórmulas permitiendo así calcular el SNR con las distintas frecuencias.
 
 ```python
 #SNR
