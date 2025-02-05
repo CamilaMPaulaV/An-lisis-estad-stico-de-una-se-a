@@ -49,7 +49,7 @@ SNR Impulso Alta Frecuencia: -24.68 dB
 SNR Artefacto Baja Frecuencia: -0.81 dB   
 SNR Artefacto Alta Frecuencia: -0.60 dB   
 
-A partir de los anteriores datos se logró evidenciar que el ruido gaussiano afecta principalmente en altas frecuencias ya que la relación señal-ruido es muy negativa, el ruido impulsivo tiene una relación SNR muy baja tanto en baja como en alta frecuencia Y los ruidos artefactos afectan en menor medida tanto en baja como en alta frecuencia.
+A partir de los anteriores datos se logró evidenciar que el ruido gaussiano afecta principalmente en altas frecuencias, dado que la relación señal-ruido es muy negativa, el ruido impulsivo tiene una relación SNR muy baja tanto en baja como en alta frecuencia Y los ruidos artefactos afectan en menor medida tanto en baja como en alta frecuencia.
 
 ## Requerimientos 
 1. Python 3.12
